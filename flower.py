@@ -13,7 +13,14 @@ def data_Info(X,Y,X_train,X_test):
     print('----------------------------------')
     print(f' X_Train shape={X_train.shape} \t X_Test={X_test.shape}')
     print('----------------------------------')
+class info_Data :
+    def prn(self,my_Yp):
+        print('*********************')
+        print(f'Predicted Y count is{len(my_Yp)}')
+        print('*********************')
+    
 
+a=info_Data()
 
 DF=load_iris()
 Y=DF.target
@@ -40,5 +47,5 @@ print(confusion_matrix(Y_test,Y_pred))  # view var & Cov
 print(classification_report(Y_test,Y_pred)) # view accuracy avrage ..
 cm = confusion_matrix(Y_test, Y_pred)
 cm_display = ConfusionMatrixDisplay(cm).plot()
-
+a.prn(Y_pred)
 
